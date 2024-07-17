@@ -14,80 +14,170 @@
 
 <body>
 
-
-    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Bool Factory</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-link" href="#">Home</a>
-                    <a class="nav-link" href="#">Servizi</a>
-                    <a class="nav-link" href="#">Contatti</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-
-
-
-
-
-
-
-
-    <div class="container pt-4">
-        <div class="row">
-
-
-
-
-            <div class="col-md-8 col-12">
-                One of three columns
-            </div>
-
-
-
-
-
-
-
-
-
-
-
-            <div class="col-md-4 col-12">
-                <div class="card" style="width: 18rem;">
-                    <img src="img/img1.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">I nostri contatti</h5>
-                        <p class="card-text">Se hai bisogno di aiuto puoi contattarci:</p>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">help@boolfactory.test</li>
-                        <li class="list-group-item">+1122334455</li>
-                    </ul>
-                    <div class="card-body">
-                        <a href="#" class="card-link">Help desk</a>
+    <header class="page-header">
+        <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Bool Factory</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link" href="#">Servizi</a>
+                        <a class="nav-link" href="#">Contatti</a>
                     </div>
                 </div>
             </div>
+        </nav>
+    </header>
 
 
 
 
+
+
+
+    <main>
+        <div class="container pt-4">
+            <div class="row">
+
+
+
+
+                <div class="col-md-8 col-12 pb-5">
+                    <h1>Richiesta preventivo</h1>
+                    <h6>Compila il form per richiedere un preventivo per i nostri servizi di sviluppo.</h6>
+
+
+                    <form class="row g-3 needs-validation" novalidate>
+
+                        <div class="">
+                            <label for="validationTooltip01" class="form-label">Nome</label>
+                            <input type="text" class="form-control" id="validationTooltip01" value="" required>
+                            <div class="valid-tooltip">
+                                Inserito correttamente.
+                            </div>
+                        </div>
+
+
+                        <div class="">
+                            <label for="validationTooltip02" class="form-label">Cognome</label>
+                            <input type="text" class="form-control" id="validationTooltip02" value="" required>
+                            <div class="valid-tooltip">
+                                Inserito correttamente.
+                            </div>
+                        </div>
+
+
+                        <div class="">
+                            <label for="exampleInputEmail1" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp">
+                        </div>
+
+
+                        <div class="">
+                            <label for="validationTooltip04" class="form-label">Tipo di Lavoro</label>
+                            <select class="form-select" id="validationTooltip04" required>
+                                <option selected disabled value="">Seleziona il tipo di lavoro</option>
+                                <option>...</option>
+                            </select>
+
+                            <div class="invalid-tooltip">
+                                Perfavore selezione il tipo di lavoro.
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-floating">
+                            <h6>TextArea con Bootstap 5</h6>
+                            <textarea class="form-control" placeholder="TextArea" id="messaggio"></textarea>
+                            <label for="messaggio"></label>
+                        </div>
+
+
+
+                        <div class="">
+                            <label for="validationTooltip05" class="form-label">Codice Promozionale (opzionale)</label>
+                            <input type="text" class="form-control" id="validationTooltip05" required>
+                            <div class="invalid-tooltip">
+                                Il codice inserito non è utilizzabile.
+                                Perfavore, inserisci un codice promozionale valido.
+                            </div>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Accetto la Privacy Policy
+                            </label>
+                        </div>
+
+
+                        <div class="row p-4">
+                            <div class="col-12 col-md-6 p-4 text-center">
+                                <button class="btn btn-primary px-3" type="submit">Calcola
+                                    preventivo</button>
+                            </div>
+
+                            <div class="col-12 col-md-6 p-4 text-center">
+                                <h5>Prezzo finale</h5>
+                                <h5>€ --- </h5>
+                            </div>
+
+                        </div>
+
+
+                    </form>
+
+                </div>
+
+
+
+
+
+
+
+
+
+                <div class="col-md-4 col-12">
+                    <div class="card" style="width: 18rem;">
+                        <img src="img/img1.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">I nostri contatti</h5>
+                            <p class="card-text">Se hai bisogno di aiuto puoi contattarci:</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">help@boolfactory.test</li>
+                            <li class="list-group-item">+1122334455</li>
+                        </ul>
+                        <div class="card-body">
+                            <a href="#" class="card-link">Help desk</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
 
 
         </div>
-    </div>
+    </main>
 
 
 
+    <footer class="end-page bg-dark">
+        <div class="container p-4">
+            <div class="row">
+                <div class="text-center">
+                    <span style="color: white; ">© 2024 - Tutti i diritti riservati</span>
+                </div>
 
+            </div>
+    </footer>
 
 
 
