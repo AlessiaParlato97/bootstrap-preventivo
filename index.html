@@ -13,7 +13,7 @@
 </head>
 
 <body>
-
+    <!-- Creazione navbar -->
     <header class="page-header">
         <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
             <div class="container-fluid">
@@ -39,21 +39,19 @@
 
 
 
-
+    <!--Creazione delle colonne affiancate -->
     <main>
         <div class="container pt-4">
             <div class="row">
-
-
-
 
                 <div class="col-md-8 col-12 pb-5">
                     <h1>Richiesta preventivo</h1>
                     <h6>Compila il form per richiedere un preventivo per i nostri servizi di sviluppo.</h6>
 
-
+                    <!-- Creazione del FORM -->
                     <form class="row g-3 needs-validation" novalidate>
 
+                        <!-- FORM NOME -->
                         <div class="nome">
                             <label for="validationTooltip01" class="form-label">Nome</label>
                             <input type="text" class="form-control" id="validationTooltip01" value="" required>
@@ -62,7 +60,7 @@
                             </div>
                         </div>
 
-
+                        <!-- FORM COGNOME -->
                         <div class="cognome">
                             <label for="validationTooltip02" class="form-label">Cognome</label>
                             <input type="text" class="form-control" id="validationTooltip02" value="" required>
@@ -71,14 +69,14 @@
                             </div>
                         </div>
 
-
+                        <!-- FORM EMAIL -->
                         <div class="email">
                             <label for="exampleInputEmail1" class="form-label">Email</label>
                             <input type="email" class="form-control" id="exampleInputEmail1"
                                 aria-describedby="emailHelp">
                         </div>
 
-
+                        <!-- FORM LAVORO -->
                         <div class="lavoro">
                             <label for="validationTooltip04" class="form-label">Tipo di Lavoro</label>
                             <select class="form-select" id="validationTooltip04" required>
@@ -92,15 +90,15 @@
                         </div>
 
 
-
+                        <!-- TEXTAREA -->
                         <div class="area">
                             <label for="inputTextArea" class="form-label">Textarea con Bootstrap 5</label>
                             <textarea class="form-control" placeholder="" id="inputTextArea"></textarea>
                         </div>
 
 
-
-                        <div class="">
+                        <!-- FORM CODICE PROMOZIONALE -->
+                        <div class="codice">
                             <label for="validationTooltip05" class="form-label">Codice Promozionale (opzionale)</label>
                             <input type="text" class="form-control" id="validationTooltip05" required>
                             <div class="invalid-tooltip">
@@ -109,6 +107,7 @@
                             </div>
                         </div>
 
+                        <!-- FORM CHECK PRIVACY -->
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                             <label class="form-check-label" for="flexCheckDefault">
@@ -116,18 +115,18 @@
                             </label>
                         </div>
 
-
+                        <!-- BUTTON CALCOLO PREVENTIVO -->
                         <div class="row p-4">
                             <div class="col-12 col-md-6 p-4 text-center">
                                 <button class="btn btn-primary px-3" type="submit">Calcola
                                     preventivo</button>
                             </div>
 
+                            <!-- OUTPUT DEL CALCOLO PREVENTIVO -->
                             <div class="col-12 col-md-6 p-3 text-center">
                                 <h5>Prezzo finale</h5>
                                 <h5>€ --- </h5>
                             </div>
-
                         </div>
 
 
