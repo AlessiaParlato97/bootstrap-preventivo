@@ -27,25 +27,24 @@ console.log("calcola prezzo del preventivo");
 const formElement = document.getElementById('form-prezzo');
 console.log(formElement);
 
-
-// Recupera l'elemento input dall'HTML tramite il suo id per ogni elemento
-const inputNomeElement = document.getElementById('inputNome');//.value.trim();
-const inputCognomeElement = document.getElementById('inputCognome');//.value.trim();
-const inputEmailElement = document.getElementById('inputEmail');//.value.trim();
-const selectLavoroElement = document.getElementById('inputLavoro');//.value.trim();
-const inputTextAreaElement = document.getElementById('inputTextArea');//.value.trim();
-const inputCodiceScontoElement = document.getElementById('inputCodiceSconto');//.value.trim();
-const inputPrivacyElement = document.getElementById('flexCheckDefault').checked;
-
-
-const calcoloOutputElement = document.getElementById('prezzoFinale');
-
-console.log(inputNomeElement, inputCognomeElement, inputEmailElement, selectLavoroElement, inputTextAreaElement, inputCodiceScontoElement, inputPrivacyElement, calcoloOutputElement);
-
-
 //invocazione della funzione SUBMIT(evento)
 formElement.addEventListener('submit', function (event) {
     event.preventDefault(); // Impedisce il comportamento di default del form
+
+    // Recupera l'elemento input dall'HTML tramite il suo id per ogni elemento
+    const inputNomeElement = document.getElementById('inputNome');//.value.trim();
+    const inputCognomeElement = document.getElementById('inputCognome');//.value.trim();
+    const inputEmailElement = document.getElementById('inputEmail');//.value.trim();
+    const selectLavoroElement = document.getElementById('selectLavoro');//.value.trim();
+    const inputTextAreaElement = document.getElementById('inputTextArea');//.value.trim();
+    const inputCodiceScontoElement = document.getElementById('inputCodiceSconto');//.value.trim();
+    const inputPrivacyElement = document.getElementById('flexCheckDefault').checked;
+
+
+    const calcoloOutputElement = document.getElementById('prezzoFinale');
+
+    console.log(inputNomeElement, inputCognomeElement, inputEmailElement, selectLavoroElement, inputTextAreaElement, inputCodiceScontoElement, inputPrivacyElement, calcoloOutputElement);
+
 
 
     /* Stampa in console i valori umani
@@ -57,30 +56,6 @@ formElement.addEventListener('submit', function (event) {
     console.log(`Codice Promozionale: ${inputCodiceSconto}`);
     console.log(`Privacy Accettata: ${inputPrivacy}`);*/
 
-
-
-
-    //dichiarazione dati form
-    const nome = parseFloat(inputNomeElement.value);
-    console.log(nome);
-
-    const cognome = parseFloat(inputCognomeElement.value);
-    console.log(cognome);
-
-    const email = parseFloat(inputEmailElement.value);
-    console.log(email);
-
-    const selectWork = selectLavoroElement.value;
-    console.log(selectWork);
-
-    const textArea = parseFloat(inputTextAreaElement.value);
-    console.log(textArea);
-
-    const privacy = parseFloat(inputPrivacyElement.value);
-    console.log(privacy);
-
-    const codice = parseFloat(inputCodiceScontoElement.value);
-    console.log(codice);
 
 
 
