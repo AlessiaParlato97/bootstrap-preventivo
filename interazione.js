@@ -1,6 +1,6 @@
 /* AGGIUNGERE L'INTERAZIONE CON L'UTENTE
-    --CREARE PER OGNI ELEMENTO UNA RECEZIONE DI INPUT IN CONSOLE
-    --CONTROLLARE E VALIDARE IN JS TUTTI GLI INPUT CON CONDIZIONI
+   
+    
     --UNA VOLTA CONVALIDATO TUTTO, FARE IN MODO DI FAR FUNZIONARE IL BOTTONE SUBMIT CALCOLO PREVENTIVO CON TUTTI I DATI DI INPUT UTILI
     --il sito deve calcolare l’ammontare del preventivo per le ore di lavoro richieste
     --Il prezzo finale = numero di ore (10) per prezzo orario
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     form.addEventListener('submit', (event) => {
         event.preventDefault();
-
+        //CREARE PER OGNI ELEMENTO UNA RECEZIONE DI INPUT IN CONSOLE
         const nome = document.getElementById('nome').value;
         const cognome = document.getElementById('cognome').value;
         const email = document.getElementById('email').value;
@@ -33,12 +33,26 @@ document.addEventListener('DOMContentLoaded', () => {
         const codice = document.getElementById('codice').value;
         const privacy = document.getElementById('flexCheckDefault').checked;
 
-        console.log(`Nome: ${nome}`);
-        console.log(`Cognome: ${cognome}`);
-        console.log(`Email: ${email}`);
-        console.log(`Lavoro: ${lavoro}`);
-        console.log(`TextArea: ${area}`);
-        console.log(`Codice sconto: ${codice}`);
+
+
+
+        //CONTROLLARE E VALIDARE IN JS TUTTI GLI INPUT CON CONDIZIONI
+        if (!nome || !cognome || !email || !lavoro || !area) {
+            alert("Per favore, compila tutti i campi obbligatori");
+        } else {
+            //altrimenti stampa tutti i valori
+            console.log(`Nome: ${nome}`);
+            console.log(`Cognome: ${cognome}`);
+            console.log(`Email: ${email}`);
+            console.log(`Lavoro: ${lavoro}`);
+            console.log(`TextArea: ${area}`);
+            console.log(`Codice sconto: ${codice}`);
+        }
+
+
+
+
+
 
 
 
