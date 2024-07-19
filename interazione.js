@@ -17,3 +17,39 @@
     
     --Step BONUS (facoltativo)
     Prova a generare dinamicamente le opzioni della select a partire da un oggetto js.*/
+
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('form-prezzo');
+
+
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const nome = document.getElementById('nome').value;
+        const cognome = document.getElementById('cognome').value;
+        const email = document.getElementById('email').value;
+        const lavoro = document.getElementById('lavoro').value;
+        const area = document.getElementById('area').value;
+        const codice = document.getElementById('codice').value;
+        const privacy = document.getElementById('flexCheckDefault').checked;
+
+        console.log(`Nome: ${nome}`);
+        console.log(`Cognome: ${cognome}`);
+        console.log(`Email: ${email}`);
+        console.log(`Lavoro: ${lavoro}`);
+        console.log(`TextArea: ${area}`);
+        console.log(`Codice sconto: ${codice}`);
+
+
+
+
+
+
+
+
+
+
+
+
+    });
+});

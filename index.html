@@ -55,8 +55,8 @@
 
                         <!-- FORM NOME -->
                         <div class="nome">
-                            <label for="inputNome" class="form-label">Nome</label>
-                            <input id="inputNome" type="text" class="form-control" name="inputNome" value="" required
+                            <label for="nome" class="form-label">Nome</label>
+                            <input id="nome" name="nome" type="text" class="form-control" value="" required
                                 minlength="2" maxlength="50">
                             <div class="valid-tooltip">
                                 Inserito correttamente.
@@ -65,8 +65,8 @@
 
                         <!-- FORM COGNOME -->
                         <div class="cognome">
-                            <label for="inputCognome" class="form-label">Cognome</label>
-                            <input id="inputCognome" type="text" class="form-control" value="" required>
+                            <label for="cognome" class="form-label">Cognome</label>
+                            <input id="cognome" name="cognome" type="text" class="form-control" value="" required>
                             <div class="valid-tooltip">
                                 Inserito correttamente.
                             </div>
@@ -74,14 +74,15 @@
 
                         <!-- FORM EMAIL -->
                         <div class="email">
-                            <label for="inputEmail" class="form-label">Email</label>
-                            <input id="inputEmail" type="email" class="form-control" aria-describedby="emailHelp">
+                            <label for="email" class="form-label">Email</label>
+                            <input id="email" nome="email" type="email" class="form-control"
+                                aria-describedby="emailHelp">
                         </div>
 
                         <!-- FORM LAVORO SELECT con opzioni -->
                         <div class="lavoro">
-                            <label for="selectLavoro" class="form-label">Tipo di Lavoro</label>
-                            <select id="selectLavoro" class="form-select" required>
+                            <label for="lavoro" class="form-label">Tipo di Lavoro</label>
+                            <select id="lavoro" class="form-select" required>
 
                                 <option selected disabled value="">Seleziona il tipo di lavoro</option>
                                 <option value="backend">Backend Development</option>
@@ -94,21 +95,21 @@
 
                         <!-- TEXTAREA -->
                         <div class="area">
-                            <label for="inputTextArea" class="form-label">Textarea con Bootstrap 5</label>
-                            <textarea id="inputTextArea" class="form-control" placeholder=""></textarea>
+                            <label for="area" class="form-label">Textarea con Bootstrap 5</label>
+                            <textarea id="area" nome="area" class="form-control" placeholder=""></textarea>
                         </div>
 
 
                         <!-- FORM CODICE PROMOZIONALE -->
                         <div class="codice">
-                            <label for="inputCodiceSconto" class="form-label">Codice Promozionale (opzionale)</label>
-                            <input id="inputCodiceSconto" type="text" class="form-control">
+                            <label for="codice" class="form-label">Codice Promozionale (opzionale)</label>
+                            <input id="codice" nome="codice" type="text" class="form-control">
                         </div>
 
                         <!-- FORM CHECK PRIVACY -->
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required>
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input id="flexCheckDefault" class="form-check-input" type="checkbox" value="" required>
+                            <label for="flexCheckDefault" nome="flexCheckDefault" class="form-check-label">
                                 Accetto la Privacy Policy
                             </label>
                         </div>
@@ -157,8 +158,6 @@
                 </div>
 
             </div>
-
-
         </div>
     </main>
 
