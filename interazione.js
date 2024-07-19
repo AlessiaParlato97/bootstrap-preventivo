@@ -55,12 +55,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const ore = 10;
         //const euro = 0;
-        const prezzoBase = 0;
+        let prezzoBase = 0;
 
 
         if (lavoro === 'backend') {
             const euro = 20.50;
-            const prezzoBase = ore * euro;
+            let prezzoBase = ore * euro;
             console.log(prezzoBase);
 
             // Mostra il prezzo finale nella pagina
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         } else if (lavoro === 'frontend') {
             const euro = 15.30;
-            const prezzoBase = ore * euro;
+            let prezzoBase = ore * euro;
             console.log(prezzoBase);
 
             // Mostra il prezzo finale nella pagina
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         } else if (lavoro === 'analysis') {
             const euro = 33.60;
-            const prezzoBase = ore * euro;
+            let prezzoBase = ore * euro;
             console.log(prezzoBase);
 
             // Mostra il prezzo finale nella pagina
@@ -85,23 +85,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-        /*--AGGIUNGERE POSSIBILITA' RISPARMIO DEL 25% SUL PREZZO FINALE
-        CON CODICI PROMOZIONALI:
-        YHDNU32, JANJC63, PWKCN25, SJDPO96, POCIE24.
-        --Se il codice inserito non è valido, il sito deve informare l’utente che il codice non è valido e il prezzo finale viene calcolato senza applicare sconti.*/
-
-        const codiciScontoValidi = ["YHDNU32", "JANJC63", "PWKCN25", "SJDPO96", "POCIE24"];
-        let prezzoFinale = prezzoBase; // Prezzo base
-
-
-        if (codiciScontoValidi.includes(codice)) {
-            prezzoFinaleScontato = prezzoFinale - 0.75; // Applica uno sconto del 25%
-            console.log(prezzoFinale);
-            //STAMPA IN FORMA UMANA
-            document.getElementById('prezzoFinale').innerText = `€${prezzoFinale.toFixed(2)}`;
-        }
-
-
-
     });
+
+    /*--AGGIUNGERE POSSIBILITA' RISPARMIO DEL 25% SUL PREZZO FINALE
+    CON CODICI PROMOZIONALI:
+    YHDNU32, JANJC63, PWKCN25, SJDPO96, POCIE24.
+    --Se il codice inserito non è valido, il sito deve informare l’utente che il codice non è valido e il prezzo finale viene calcolato senza applicare sconti.*/
+
+
+    function calcolaPrezzoFinale(prezzoBase, codice) {
+        const codiciScontoValidi = ["YHDNU32", "JANJC63", "PWKCN25", "SJDPO96", "POCIE24"];
+        if (codiciScontoValidi.includes(codice)) {
+            prezzoFinaleScontato = prezzoBase * 0.75; // Applica uno sconto del 25%
+            console.log(prezzoFinaleScontato);
+            document.getElementById('prezzoFinaleScontato').innerText = `€${prezzoFinaleScontato.toFixed(2)}`;
+        } else {
+
+            console.log(prezzoBase);
+            document.getElementById('prezzoBase').innerText = `€${prezzoBase.toFixed(2)}`;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
 });
