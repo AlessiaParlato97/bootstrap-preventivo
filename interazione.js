@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (lavoro === 'backend') {
                 const euro = 20.50;
-                let prezzoBase = ore * euro;
+                prezzoBase = ore * euro;
                 console.log(prezzoBase);
 
                 // Mostra il prezzo finale nella pagina
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             } else if (lavoro === 'frontend') {
                 const euro = 15.30;
-                let prezzoBase = ore * euro;
+                prezzoBase = ore * euro;
                 console.log(prezzoBase);
 
                 // Mostra il prezzo finale nella pagina
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             } else if (lavoro === 'analysis') {
                 const euro = 33.60;
-                let prezzoBase = ore * euro;
+                prezzoBase = ore * euro;
                 console.log(prezzoBase);
 
                 // Mostra il prezzo finale nella pagina
@@ -96,6 +96,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 function calcolaPrezzoFinale(prezzoBase, codice) {
+    prezzoBase = Number(prezzoBase);
+
     const codiciScontoValidi = ["YHDNU32", "JANJC63", "PWKCN25", "SJDPO96", "POCIE24"];
     let prezzoFinaleScontato;
     if (codiciScontoValidi.includes(codice)) {
@@ -109,3 +111,4 @@ function calcolaPrezzoFinale(prezzoBase, codice) {
         //document.getElementById('prezzoBase').innerText = `€${prezzoBase.toFixed(2)}`;
     }
 }
+
