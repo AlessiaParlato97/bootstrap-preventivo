@@ -108,7 +108,7 @@ function calcolaPrezzoFinale(prezzoBase, codice) {
     } else {
         console.log('Il codice non è valido');
         console.log(prezzoBase);
-        //document.getElementById('prezzoBase').innerText = `€${prezzoBase.toFixed(2)}`;
+        document.getElementById('prezzoFinaleScontato').innerText = `€${prezzoBase.toFixed(2)}`;
     }
 }
 
