@@ -30,60 +30,61 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log(`TextArea: ${area}`);
             console.log(`Codice sconto: ${codice}`);
             console.log(`Privacy: ${privacy}`);
+
+
+
+
+
+
+            //--Il risultato del calcolo del prezzo finale deve essere visualizzato in “forma umana” (con 2 decimali e il simbolo dell’euro).
+
+            //--Step BONUS (facoltativo)
+            //Prova a generare dinamicamente le opzioni della select a partire da un oggetto js.*/
+
+
+            //CALCOLO PREVENTIVO BASE
+
+            /*--Il prezzo finale = numero di ore (10) per prezzo orario
+            --Il prezzo orario per una commissione varia in questo modo:
+            se  backend prezzo = 10 * 20.50€
+            se  frontend prezzo = 10 * 15.30€
+            se  l’analisi progettuale prezzo = 10 * 33.60€
+            */
+
+            const ore = 10;
+            //const euro = 0;
+            let prezzoBase = 0;
+
+
+            if (lavoro === 'backend') {
+                const euro = 20.50;
+                let prezzoBase = ore * euro;
+                console.log(prezzoBase);
+
+                // Mostra il prezzo finale nella pagina
+                document.getElementById('prezzoBase').innerText = `€${prezzoBase.toFixed(2)}`;
+
+            } else if (lavoro === 'frontend') {
+                const euro = 15.30;
+                let prezzoBase = ore * euro;
+                console.log(prezzoBase);
+
+                // Mostra il prezzo finale nella pagina
+                document.getElementById('prezzoBase').innerText = `€${prezzoBase.toFixed(2)}`;
+
+            } else if (lavoro === 'analysis') {
+                const euro = 33.60;
+                let prezzoBase = ore * euro;
+                console.log(prezzoBase);
+
+                // Mostra il prezzo finale nella pagina
+                document.getElementById('prezzoBase').innerText = `€${prezzoBase.toFixed(2)}`;
+            }
+
+            calcolaPrezzoFinale(prezzoBase, codice);
+
+
         }
-
-
-
-        /*--il sito deve calcolare l’ammontare del preventivo per le ore di lavoro richieste
-        
-    
-        
-        --Il risultato del calcolo del prezzo finale deve essere visualizzato in “forma umana” (con 2 decimali e il simbolo dell’euro).
-        
-        --Step BONUS (facoltativo)
-        Prova a generare dinamicamente le opzioni della select a partire da un oggetto js.*/
-
-
-        //CALCOLO PREVENTIVO BASE
-
-        /*--Il prezzo finale = numero di ore (10) per prezzo orario
-        --Il prezzo orario per una commissione varia in questo modo:
-        se  backend prezzo = 10 * 20.50€
-        se  frontend prezzo = 10 * 15.30€
-        se  l’analisi progettuale prezzo = 10 * 33.60€
-        */
-
-        const ore = 10;
-        //const euro = 0;
-        let prezzoBase = 0;
-
-
-        if (lavoro === 'backend') {
-            const euro = 20.50;
-            let prezzoBase = ore * euro;
-            console.log(prezzoBase);
-
-            // Mostra il prezzo finale nella pagina
-            document.getElementById('prezzoBase').innerText = `€${prezzoBase.toFixed(2)}`;
-
-        } else if (lavoro === 'frontend') {
-            const euro = 15.30;
-            let prezzoBase = ore * euro;
-            console.log(prezzoBase);
-
-            // Mostra il prezzo finale nella pagina
-            document.getElementById('prezzoBase').innerText = `€${prezzoBase.toFixed(2)}`;
-
-        } else if (lavoro === 'analysis') {
-            const euro = 33.60;
-            let prezzoBase = ore * euro;
-            console.log(prezzoBase);
-
-            // Mostra il prezzo finale nella pagina
-            document.getElementById('prezzoBase').innerText = `€${prezzoBase.toFixed(2)}`;
-        }
-
-        calcolaPrezzoFinale(prezzoBase, codice);
 
     });
 });
@@ -96,13 +97,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function calcolaPrezzoFinale(prezzoBase, codice) {
     const codiciScontoValidi = ["YHDNU32", "JANJC63", "PWKCN25", "SJDPO96", "POCIE24"];
+    let prezzoFinaleScontato;
     if (codiciScontoValidi.includes(codice)) {
-        prezzoFinaleScontato = prezzoBase * 0.75; // Applica uno sconto del 25%
+        const sconto = 0.25 * prezzoBase; // Applica uno sconto del 25%
+        prezzoFinaleScontato = prezzoBase - sconto;
         console.log(prezzoFinaleScontato);
         document.getElementById('prezzoFinaleScontato').innerText = `€${prezzoFinaleScontato.toFixed(2)}`;
     } else {
-
+        console.log('Il codice non è valido');
         console.log(prezzoBase);
-        document.getElementById('prezzoBase').innerText = `€${prezzoBase.toFixed(2)}`;
+        //document.getElementById('prezzoBase').innerText = `€${prezzoBase.toFixed(2)}`;
     }
 }
