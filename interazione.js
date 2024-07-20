@@ -83,36 +83,26 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('prezzoBase').innerText = `€${prezzoBase.toFixed(2)}`;
         }
 
-
+        calcolaPrezzoFinale(prezzoBase, codice);
 
     });
+});
 
-    /*--AGGIUNGERE POSSIBILITA' RISPARMIO DEL 25% SUL PREZZO FINALE
+/*--AGGIUNGERE POSSIBILITA' RISPARMIO DEL 25% SUL PREZZO FINALE
     CON CODICI PROMOZIONALI:
     YHDNU32, JANJC63, PWKCN25, SJDPO96, POCIE24.
     --Se il codice inserito non è valido, il sito deve informare l’utente che il codice non è valido e il prezzo finale viene calcolato senza applicare sconti.*/
 
 
-    function calcolaPrezzoFinale(prezzoBase, codice) {
-        const codiciScontoValidi = ["YHDNU32", "JANJC63", "PWKCN25", "SJDPO96", "POCIE24"];
-        if (codiciScontoValidi.includes(codice)) {
-            prezzoFinaleScontato = prezzoBase * 0.75; // Applica uno sconto del 25%
-            console.log(prezzoFinaleScontato);
-            document.getElementById('prezzoFinaleScontato').innerText = `€${prezzoFinaleScontato.toFixed(2)}`;
-        } else {
+function calcolaPrezzoFinale(prezzoBase, codice) {
+    const codiciScontoValidi = ["YHDNU32", "JANJC63", "PWKCN25", "SJDPO96", "POCIE24"];
+    if (codiciScontoValidi.includes(codice)) {
+        prezzoFinaleScontato = prezzoBase * 0.75; // Applica uno sconto del 25%
+        console.log(prezzoFinaleScontato);
+        document.getElementById('prezzoFinaleScontato').innerText = `€${prezzoFinaleScontato.toFixed(2)}`;
+    } else {
 
-            console.log(prezzoBase);
-            document.getElementById('prezzoBase').innerText = `€${prezzoBase.toFixed(2)}`;
-        }
+        console.log(prezzoBase);
+        document.getElementById('prezzoBase').innerText = `€${prezzoBase.toFixed(2)}`;
     }
-
-
-
-
-
-
-
-
-
-
-});
+}
