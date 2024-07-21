@@ -1,4 +1,4 @@
-// AGGIUNGERE L'INTERAZIONE CON L'UTENTE
+// INTERAZIONE CON L'UTENTE
 
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('form-prezzo');
@@ -34,18 +34,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
-
-
-            //--Il risultato del calcolo del prezzo finale deve essere visualizzato in “forma umana” (con 2 decimali e il simbolo dell’euro).
-
-            //--Step BONUS (facoltativo)
-            //Prova a generare dinamicamente le opzioni della select a partire da un oggetto js.*/
-
-
             //CALCOLO PREVENTIVO BASE
 
-            /*--Il prezzo finale = numero di ore (10) per prezzo orario
+            /*--Il prezzo base = numero di ore (10) per prezzo orario
             --Il prezzo orario per una commissione varia in questo modo:
             se  backend prezzo = 10 * 20.50€
             se  frontend prezzo = 10 * 15.30€
@@ -55,7 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const ore = 10;
             //const euro = 0;
             let prezzoBase = 0;
-
 
             if (lavoro === 'backend') {
                 const euro = 20.50;
@@ -85,6 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
             calcolaPrezzoFinale(prezzoBase, codice);
 
 
+            document.getElementById("form-prezzo").reset();
         }
 
     });
@@ -97,19 +88,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 function calcolaPrezzoFinale(prezzoBase, codice) {
-    prezzoBase = Number(prezzoBase);
+    prezzoBase = Number(prezzoBase); //riassegnazione della variabile Number
 
     const codiciScontoValidi = ["YHDNU32", "JANJC63", "PWKCN25", "SJDPO96", "POCIE24"];
     let prezzoFinaleScontato;
+
     if (codiciScontoValidi.includes(codice)) {
         const sconto = 0.25 * prezzoBase; // Applica uno sconto del 25%
         prezzoFinaleScontato = prezzoBase - sconto;
         console.log(prezzoFinaleScontato);
         document.getElementById('prezzoFinalissimo').innerText = `€${prezzoFinaleScontato.toFixed(2)}`;
-    } else {
-        console.log('Il codice non è valido');
-        console.log(prezzoBase);
+
+
+    } else if (codice === undefined || codice === '' || codice !== 'codice') {
+        console.log('Il codice non è valido o non è stato inserito.');
         document.getElementById('prezzoFinalissimo').innerText = `€${prezzoBase.toFixed(2)}`;
+        alert("Il codice sconto non è stato inserito o non è valido, verrà calcolato il prezzo base.");
+
     }
+
+
 }
 
+
+
+
+
+
+
+
+//--Step BONUS (facoltativo)
+//Prova a generare dinamicamente le opzioni della select a partire da un oggetto js.*/
