@@ -18,9 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
         //CONTROLLARE E VALIDARE IN JS TUTTI GLI INPUT CON CONDIZIONI
-        if (!nome || !cognome || !email || !lavoro || !privacy) {
+        if (false) {
             alert("Per favore, compila tutti i campi obbligatori");
         } else {
             //altrimenti stampa tutti i valori
@@ -109,9 +108,6 @@ function calcolaPrezzoFinale(prezzoBase, codice) {
 
 
 }
-
-
-
 
 
 

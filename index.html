@@ -49,33 +49,28 @@
                     <h6>Compila il form per richiedere un preventivo per i nostri servizi di sviluppo.</h6>
 
                     <!-- Creazione del FORM -->
-                    <form id="form-prezzo" action="/submit" method="post" class="row g-3 needs-validation" novalidate>
+                    <form id="form-prezzo" action="/submit" method="post" class="row g-3">
 
                         <!-- Creazione prima colonna form -->
 
                         <!-- FORM NOME -->
                         <div class="nome">
-                            <label for="nome" class="form-label">Nome</label>
-                            <input id="nome" name="nome" type="text" class="form-control" value="" required
-                                minlength="2" maxlength="50">
-                            <div class="valid-tooltip">
-                                Inserito correttamente.
-                            </div>
+                            <label for="nome" class="form-label">Nome </label>
+                            <input id="nome" name="nome" type="text" class="form-control" value=""
+                                aria-describedby="inputGroupPrepend2" required minlength="2" maxlength="50">
                         </div>
 
                         <!-- FORM COGNOME -->
                         <div class="cognome">
                             <label for="cognome" class="form-label">Cognome</label>
-                            <input id="cognome" name="cognome" type="text" class="form-control" value="" required>
-                            <div class="valid-tooltip">
-                                Inserito correttamente.
-                            </div>
+                            <input id="cognome" name="cognome" type="text" class="form-control" value=""
+                                aria-describedby="inputGroupPrepend2" required>
                         </div>
 
                         <!-- FORM EMAIL -->
                         <div class="email">
                             <label for="email" class="form-label">Email</label>
-                            <input id="email" nome="email" type="email" class="form-control"
+                            <input id="email" nome="email" type="email" required class="form-control"
                                 aria-describedby="emailHelp">
                         </div>
 
