@@ -115,10 +115,12 @@
                         </div>
 
                         <!-- BUTTON CALCOLO PREVENTIVO -->
+                        <!-- in apici per indicare il riferimento alla variabile nel js/ senza apici = perchè l'html non riconosce che sono variabili js ma variabili non definite nell'html-->
+
                         <div class="row p-4">
                             <div class="col-12 col-md-6 p-4 text-center">
-                                <button onclick="calcolaPrezzoFinale(prezzoBase, codice)" class="btn btn-primary px-3"
-                                    type="submit" id="calcolaPreventivo">Calcola
+                                <button onclick="calcolaPrezzoFinale('prezzoBase','codice')"
+                                    class="btn btn-primary px-3" type="submit">Calcola
                                     preventivo</button>
                             </div>
 
@@ -126,8 +128,7 @@
 
                             <div class="col-12 col-md-6 p-3 text-center">
                                 <h5>Prezzo finale</h5>
-                                <h5 id="prezzoBase">€</h5>
-                                <h5 id="prezzoFinaleScontato">€</h5>
+                                <h5 id="prezzoFinalissimo">€</h5>
                             </div>
                         </div>
 

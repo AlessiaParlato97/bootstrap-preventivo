@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const area = document.getElementById('area').value;
         const codice = document.getElementById('codice').value;
         const privacy = document.getElementById('flexCheckDefault').checked;
+        const prezzoFinalissimo = document.getElementById('prezzoFinalissimo').value;
 
 
 
@@ -61,25 +62,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 prezzoBase = ore * euro;
                 console.log(prezzoBase);
 
-                // Mostra il prezzo finale nella pagina
-                document.getElementById('prezzoBase').innerText = `€${prezzoBase.toFixed(2)}`;
+
 
             } else if (lavoro === 'frontend') {
                 const euro = 15.30;
                 prezzoBase = ore * euro;
                 console.log(prezzoBase);
 
-                // Mostra il prezzo finale nella pagina
-                document.getElementById('prezzoBase').innerText = `€${prezzoBase.toFixed(2)}`;
+
 
             } else if (lavoro === 'analysis') {
                 const euro = 33.60;
                 prezzoBase = ore * euro;
                 console.log(prezzoBase);
 
-                // Mostra il prezzo finale nella pagina
-                document.getElementById('prezzoBase').innerText = `€${prezzoBase.toFixed(2)}`;
+
             }
+
+            // Mostra il prezzo finale nella pagina
+            //document.getElementById('prezzoBase').innerText = `€${prezzoBase.toFixed(2)}`;
 
             calcolaPrezzoFinale(prezzoBase, codice);
 
@@ -104,11 +105,11 @@ function calcolaPrezzoFinale(prezzoBase, codice) {
         const sconto = 0.25 * prezzoBase; // Applica uno sconto del 25%
         prezzoFinaleScontato = prezzoBase - sconto;
         console.log(prezzoFinaleScontato);
-        document.getElementById('prezzoFinaleScontato').innerText = `€${prezzoFinaleScontato.toFixed(2)}`;
+        document.getElementById('prezzoFinalissimo').innerText = `€${prezzoFinaleScontato.toFixed(2)}`;
     } else {
         console.log('Il codice non è valido');
         console.log(prezzoBase);
-        document.getElementById('prezzoFinaleScontato').innerText = `€${prezzoBase.toFixed(2)}`;
+        document.getElementById('prezzoFinalissimo').innerText = `€${prezzoBase.toFixed(2)}`;
     }
 }
 
